@@ -31,8 +31,8 @@ class _HomePageState extends State<HomeScreenWidget> {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(255, 97, 39, 150),
-              Color.fromARGB(255, 148, 66, 169),
+              Color.fromARGB(255, 84, 66, 219),
+              Color.fromARGB(255, 163, 34, 219),
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -44,7 +44,7 @@ class _HomePageState extends State<HomeScreenWidget> {
             const Text(
               "You pressed the button",
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 25.0),
+              style: TextStyle(fontSize: 25.0, color: Colors.white),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -54,13 +54,13 @@ class _HomePageState extends State<HomeScreenWidget> {
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     fontSize: 30.0,
-                    color: Color.fromARGB(150, 21, 189, 26),
+                    color: Color.fromARGB(255, 118, 238, 122),
                   ),
                 ),
                 const Text(
                   " times",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 25.0),
+                  style: TextStyle(fontSize: 25.0, color: Colors.white),
                 ),
               ],
             )
