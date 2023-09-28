@@ -14,7 +14,14 @@ class MyApp extends StatelessWidget {
       //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       //   useMaterial3: true,
       // ),
-      home: HomeScreenWidget(title: "Hi there"),
+      home: HomeScreenWidget(
+        title: "Hi there",
+        colorGradientList: [
+          Color.fromARGB(255, 84, 66, 219),
+          Color.fromARGB(255, 127, 66, 219),
+          Color.fromARGB(255, 163, 34, 219),
+        ],
+      ),
     );
   }
 }

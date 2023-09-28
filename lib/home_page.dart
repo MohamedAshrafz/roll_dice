@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
 class HomeScreenWidget extends StatefulWidget {
-  const HomeScreenWidget({super.key, required this.title});
+  const HomeScreenWidget({
+    super.key,
+    required this.title,
+    required this.colorGradientList,
+  });
 
   final String title;
+  final List<Color> colorGradientList;
 
   @override
   State<StatefulWidget> createState() {
@@ -28,12 +33,9 @@ class _HomePageState extends State<HomeScreenWidget> {
       //   title: Text(widget.title),
       // ),
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [
-              Color.fromARGB(255, 84, 66, 219),
-              Color.fromARGB(255, 163, 34, 219),
-            ],
+            colors: widget.colorGradientList,
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
