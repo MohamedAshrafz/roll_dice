@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class HomeScreenWidget extends StatefulWidget {
@@ -24,22 +26,19 @@ class HomeScreenWidget extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomeScreenWidget> {
-  int _counter = 0;
+  int _diceRolledNumber = 0;
 
   void addOneToTheCounter() {
     setState(() {
-      _counter++;
+      _diceRolledNumber = 1 + Random().nextInt(6);
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   // backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      //   title: Text(widget.title),
-      // ),
       body: Container(
+        alignment: Alignment.center,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: widget.colorGradientList,
@@ -50,35 +49,34 @@ class _HomePageState extends State<HomeScreenWidget> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text(
+              widget.title,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontSize: 25.0,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             const Text(
-              "You pressed the button",
+              "The dice you rolled",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 25.0, color: Colors.white),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "$_counter",
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    fontSize: 30.0,
-                    color: Color.fromARGB(255, 118, 238, 122),
-                  ),
+            IconButton(
+              onPressed: addOneToTheCounter,
+              icon: SizedBox(
+                width: 200,
+                height: 200,
+                child: Image.asset(
+                  "assets/images/dice-$_diceRolledNumber.png",
+                  width: 200,
+                  height: 200,
                 ),
-                const Text(
-                  " times",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 25.0, color: Colors.white),
-                ),
-              ],
-            )
+              ),
+            ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: addOneToTheCounter,
-        child: const Icon(Icons.add),
       ),
     );
   }
