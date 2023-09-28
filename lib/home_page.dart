@@ -36,8 +36,24 @@ class _HomePageState extends State<HomeScreenWidget> {
     });
   }
 
+  void _resetApp() {
+    setState(() {
+      _diceRolledNumber = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    String additionalText;
+    bool diceIsAlreadyRolled;
+    if (_diceRolledNumber > 0 && _diceRolledNumber < 7) {
+      additionalText = "The dice you rolled";
+      diceIsAlreadyRolled = true;
+    } else {
+      additionalText = "Please roll the dice";
+      diceIsAlreadyRolled = false;
+    }
+
     return Scaffold(
       body: Container(
         // to make the container takes all the screen size
@@ -61,17 +77,23 @@ class _HomePageState extends State<HomeScreenWidget> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const Text(
-              "The dice you rolled",
+            Text(
+              additionalText,
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 25.0, color: Colors.white),
+              style: const TextStyle(fontSize: 25.0, color: Colors.white),
             ),
             DiceIconButton(
               rollDiceFunction: _rollDice,
               rolledNumber: _diceRolledNumber,
+              isDiceRolled: diceIsAlreadyRolled,
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        tooltip: "Reset the app",
+        onPressed: _resetApp,
+        child: const Icon(Icons.refresh),
       ),
     );
   }
