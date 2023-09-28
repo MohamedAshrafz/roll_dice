@@ -12,8 +12,9 @@ class HomeScreenWidget extends StatefulWidget {
   // adding additional constructor to the widget
   const HomeScreenWidget.defaultColoring({super.key, required this.title})
       : colorGradientList = const [
-          Colors.purple,
-          Colors.blue,
+          Color.fromARGB(255, 163, 34, 219),
+          Color.fromARGB(255, 109, 66, 219),
+          Color.fromARGB(255, 84, 66, 219),
         ];
 
   final String title;
@@ -68,11 +69,19 @@ class _HomePageState extends State<HomeScreenWidget> {
               icon: SizedBox(
                 width: 200,
                 height: 200,
-                child: Image.asset(
-                  "assets/images/dice-$_diceRolledNumber.png",
-                  width: 200,
-                  height: 200,
-                ),
+                child: _diceRolledNumber > 0 && _diceRolledNumber < 7
+                    ? Image.asset(
+                        "assets/images/dice-$_diceRolledNumber.png",
+                        width: 200,
+                        height: 200,
+                      )
+                    : IconButton(
+                        onPressed: addOneToTheCounter,
+                        icon: const Text(
+                          "Roll Dice",
+                          style: TextStyle(fontSize: 25.0, color: Colors.white),
+                        ),
+                      ),
               ),
             ),
           ],

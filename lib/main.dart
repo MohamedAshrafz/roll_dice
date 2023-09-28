@@ -10,19 +10,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData(
-          //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-          useMaterial3: true,
-        ),
-        home: const HomeScreenWidget.defaultColoring(title: "Hello World")
-        // home: const HomeScreenWidget(
-        //   title: "Hi there",
-        //   colorGradientList: [
-        //     Color.fromARGB(255, 84, 66, 219),
-        //     Color.fromARGB(255, 109, 66, 219),
-        //     Color.fromARGB(255, 163, 34, 219),
-        //   ],
-        // ),
-        );
+      theme: ThemeData(
+        //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        useMaterial3: true,
+      ),
+      home: const HomeScreenWidget.defaultColoring(title: "Hello There"),
+    );
   }
 }
