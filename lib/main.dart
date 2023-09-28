@@ -9,12 +9,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      // theme: ThemeData(
+    return MaterialApp(
+      theme: ThemeData(
       //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-      //   useMaterial3: true,
-      // ),
-      home: HomeScreenWidget(
+        useMaterial3: true,
+      ),
+      home: const HomeScreenWidget(
         title: "Hi there",
         colorGradientList: [
           Color.fromARGB(255, 84, 66, 219),
