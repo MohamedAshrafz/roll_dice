@@ -7,6 +7,13 @@ class HomeScreenWidget extends StatefulWidget {
     required this.colorGradientList,
   });
 
+  // adding additional constructor to the widget
+  const HomeScreenWidget.defaultColoring({super.key, required this.title})
+      : colorGradientList = const [
+          Colors.purple,
+          Colors.blue,
+        ];
+
   final String title;
   final List<Color> colorGradientList;
 
