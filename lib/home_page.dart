@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:roll_dice/dice_icon_button.dart';
 
 class HomeScreenWidget extends StatefulWidget {
   const HomeScreenWidget({
@@ -29,7 +30,7 @@ class HomeScreenWidget extends StatefulWidget {
 class _HomePageState extends State<HomeScreenWidget> {
   int _diceRolledNumber = 0;
 
-  void addOneToTheCounter() {
+  void _rollDice() {
     setState(() {
       _diceRolledNumber = 1 + Random().nextInt(6);
     });
@@ -39,6 +40,7 @@ class _HomePageState extends State<HomeScreenWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        // to make the container takes all the screen size
         alignment: Alignment.center,
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -64,25 +66,9 @@ class _HomePageState extends State<HomeScreenWidget> {
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 25.0, color: Colors.white),
             ),
-            IconButton(
-              onPressed: addOneToTheCounter,
-              icon: SizedBox(
-                width: 200,
-                height: 200,
-                child: _diceRolledNumber > 0 && _diceRolledNumber < 7
-                    ? Image.asset(
-                        "assets/images/dice-$_diceRolledNumber.png",
-                        width: 200,
-                        height: 200,
-                      )
-                    : IconButton(
-                        onPressed: addOneToTheCounter,
-                        icon: const Text(
-                          "Roll Dice",
-                          style: TextStyle(fontSize: 25.0, color: Colors.white),
-                        ),
-                      ),
-              ),
+            DiceIconButton(
+              rollDiceFunction: _rollDice,
+              rolledNumber: _diceRolledNumber,
             ),
           ],
         ),
