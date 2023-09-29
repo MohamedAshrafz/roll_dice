@@ -2,24 +2,18 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:roll_dice/dice_icon_button.dart';
+import 'package:roll_dice/main.dart';
 
 class HomeScreenWidget extends StatefulWidget {
   const HomeScreenWidget({
     super.key,
     required this.title,
-    required this.colorGradientList,
   });
 
   // adding additional constructor to the widget
-  const HomeScreenWidget.defaultColoring({super.key, required this.title})
-      : colorGradientList = const [
-          Color.fromARGB(255, 163, 34, 219),
-          Color.fromARGB(255, 109, 66, 219),
-          Color.fromARGB(255, 84, 66, 219),
-        ];
+  const HomeScreenWidget.defaultColoring({super.key, required this.title});
 
   final String title;
-  final List<Color> colorGradientList;
 
   @override
   State<StatefulWidget> createState() {
@@ -58,13 +52,7 @@ class _HomePageState extends State<HomeScreenWidget> {
       body: Container(
         // to make the container takes all the screen size
         alignment: Alignment.center,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: widget.colorGradientList,
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
+        decoration: appBoxDecoration,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
