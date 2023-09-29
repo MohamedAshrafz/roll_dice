@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const double diceIconSize = 200.0;
+
 class DiceIconButton extends StatelessWidget {
   const DiceIconButton({
     super.key,
@@ -19,8 +21,6 @@ class DiceIconButton extends StatelessWidget {
     if (isDiceRolled) {
       childIcon = Image.asset(
         "assets/images/dice-$rolledNumber.png",
-        width: 200,
-        height: 200,
       );
     } else {
       childIcon = ElevatedButton(
@@ -36,8 +36,8 @@ class DiceIconButton extends StatelessWidget {
       tooltip: isDiceRolled? "Dice rolled in this try":"Roll dice",
       onPressed: rollDiceFunction,
       icon: SizedBox(
-        width: 200,
-        height: 200,
+        width: diceIconSize,
+        height: diceIconSize,
         child: childIcon,
       ),
     );
