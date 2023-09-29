@@ -8,12 +8,22 @@ class HomeScreenWidget extends StatefulWidget {
   const HomeScreenWidget({
     super.key,
     required this.title,
+    required this.colorGradientList,
   });
 
   // adding additional constructor to the widget
-  const HomeScreenWidget.defaultColoring({super.key, required this.title});
+  const HomeScreenWidget.defaultHomeScreenColoring({super.key, required this.title})
+      : colorGradientList = const [
+          Color.fromARGB(255, 219, 34, 34),
+          Color.fromARGB(255, 219, 68, 34),
+          Color.fromARGB(255, 219, 105, 34),
+        ];
+
+  const HomeScreenWidget.defaultAppColoring({super.key, required this.title})
+      : colorGradientList = null;
 
   final String title;
+  final List<Color>? colorGradientList;
 
   @override
   State<StatefulWidget> createState() {
@@ -48,11 +58,21 @@ class _HomePageState extends State<HomeScreenWidget> {
       diceIsAlreadyRolled = false;
     }
 
+    BoxDecoration localWidgetBoxDecoration = widget.colorGradientList != null
+        ? BoxDecoration(
+            gradient: LinearGradient(
+              colors: widget.colorGradientList!,
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          )
+        : appBoxDecoration;
+
     return Scaffold(
       body: Container(
         // to make the container takes all the screen size
         alignment: Alignment.center,
-        decoration: appBoxDecoration,
+        decoration: localWidgetBoxDecoration,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

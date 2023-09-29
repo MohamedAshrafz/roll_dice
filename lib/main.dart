@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:roll_dice/home_page.dart';
 
-const colorGradientList = [
+const appColorGradientList = [
   Color.fromARGB(255, 163, 34, 219),
   Color.fromARGB(255, 109, 66, 219),
   Color.fromARGB(255, 84, 66, 219),
@@ -10,7 +10,7 @@ const colorGradientList = [
 
 const appBoxDecoration = BoxDecoration(
   gradient: LinearGradient(
-    colors: colorGradientList,
+    colors: appColorGradientList,
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   ),
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const HomeScreenWidget.defaultColoring(title: "Hello There"),
+      home: const HomeScreenWidget.defaultHomeScreenColoring(title: "Hello There"),
     );
   }
 }
