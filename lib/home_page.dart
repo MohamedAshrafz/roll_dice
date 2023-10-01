@@ -98,11 +98,13 @@ class _HomePageState extends State<HomeScreenWidget> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        tooltip: "Reset the app",
-        onPressed: _resetApp,
-        child: const Icon(Icons.refresh),
-      ),
+      floatingActionButton: diceIsAlreadyRolled
+          ? FloatingActionButton(
+              tooltip: "Reset the app",
+              onPressed: _resetApp,
+              child: const Icon(Icons.refresh),
+            )
+          : null,
     );
   }
 }
