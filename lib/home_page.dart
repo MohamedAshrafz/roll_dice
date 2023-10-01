@@ -88,14 +88,14 @@ class _HomePageState extends State<HomeScreenWidget> {
               textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 25.0, color: Colors.white),
             ),
-            const SizedBox(
-              height: 20.0,
-            ),
-            DiceIconButton(
-              rollDiceFunction: _rollDice,
-              rolledNumber: _diceRolledNumber,
-              isDiceRolled: isDiceRolled,
-            ),
+            SizedBox.fromSize(
+              size: const Size(diceIconSize, diceIconSize),
+              child: DiceIconButton(
+                rollDiceFunction: _rollDice,
+                rolledNumber: _diceRolledNumber,
+                isDiceRolled: isDiceRolled,
+              ),
+            )
           ],
         ),
       ),

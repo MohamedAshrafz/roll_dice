@@ -17,27 +17,25 @@ class DiceIconButton extends StatelessWidget {
     Widget childIcon;
 
     if (isDiceRolled) {
-      childIcon = SizedBox(
-        width: diceIconSize,
-        height: diceIconSize,
-        child: Image.asset(
+      childIcon = IconButton(
+        tooltip: isDiceRolled ? "Dice rolled in this try" : "Roll dice",
+        onPressed: rollDiceFunction,
+        icon: Image.asset(
           "assets/images/dice-$rolledNumber.png",
         ),
       );
     } else {
-      childIcon = ElevatedButton(
-        onPressed: rollDiceFunction,
-        child: const Text(
-          "Roll Dice",
-          style: TextStyle(fontSize: 23.0, fontWeight: FontWeight.bold),
+      childIcon = Center(
+        child: ElevatedButton(
+          onPressed: rollDiceFunction,
+          child: const Text(
+            "Roll Dice",
+            style: TextStyle(fontSize: 23.0, fontWeight: FontWeight.bold),
+          ),
         ),
       );
     }
 
-    return IconButton(
-      tooltip: isDiceRolled ? "Dice rolled in this try" : "Roll dice",
-      onPressed: rollDiceFunction,
-      icon: childIcon,
-    );
+    return childIcon;
   }
 }
