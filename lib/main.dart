@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:roll_dice/home_page.dart';
-
-const appColorGradientList = [
-  Color.fromARGB(255, 163, 34, 219),
-  Color.fromARGB(255, 109, 66, 219),
-  Color.fromARGB(255, 84, 66, 219),
-];
+import 'constants.dart';
 
 const appBoxDecoration = BoxDecoration(
   gradient: LinearGradient(

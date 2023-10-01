@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:roll_dice/dice_icon_button.dart';
 import 'package:roll_dice/main.dart';
+import 'constants.dart';
 
 class HomeScreenWidget extends StatefulWidget {
   const HomeScreenWidget({

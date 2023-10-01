@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-const double diceIconSize = 200.0;
-
 class DiceIconButton extends StatelessWidget {
   const DiceIconButton({
     super.key,
