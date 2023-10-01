@@ -33,7 +33,7 @@ class _HomePageState extends State<HomeScreenWidget> {
 
   void _rollDice() {
     setState(() {
-      _diceRolledNumber = 1 + Random().nextInt(6);
+      _diceRolledNumber = 1 + Random().nextInt(1000);
     });
   }
 

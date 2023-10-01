@@ -17,11 +17,21 @@ class DiceIconButton extends StatelessWidget {
     Widget childIcon;
 
     if (isDiceRolled) {
-      childIcon = IconButton(
-        tooltip: isDiceRolled ? "Dice rolled in this try" : "Roll dice",
-        onPressed: rollDiceFunction,
-        icon: Image.asset(
-          "assets/images/dice-$rolledNumber.png",
+      childIcon = Center(
+        child: OutlinedButton(
+          style: OutlinedButton.styleFrom(
+            side: const BorderSide(color: Colors.white),
+          ),
+          onPressed: rollDiceFunction,
+          child: Text(
+            "The rolled number is: $rolledNumber,\n"
+            "Roll Dice again?",
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 23.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
       );
     } else {
