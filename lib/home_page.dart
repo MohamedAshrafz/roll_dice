@@ -14,11 +14,7 @@ class HomeScreenWidget extends StatefulWidget {
 
   // adding additional constructor to the widget
   const HomeScreenWidget.defaultHomeScreenColoring({super.key, required this.title})
-      : colorGradientList = const [
-          Color.fromARGB(255, 219, 34, 34),
-          Color.fromARGB(255, 219, 68, 34),
-          Color.fromARGB(255, 219, 105, 34),
-        ];
+      : colorGradientList = homeScreenColorGradientList;
 
   const HomeScreenWidget.defaultAppColoring({super.key, required this.title})
       : colorGradientList = null;
@@ -50,7 +46,7 @@ class _HomePageState extends State<HomeScreenWidget> {
   @override
   Widget build(BuildContext context) {
     bool isDiceRolled;
-    if (_diceRolledNumber > 0 && _diceRolledNumber < 7) {
+    if (_diceRolledNumber != 0) {
       isDiceRolled = true;
     } else {
       isDiceRolled = false;

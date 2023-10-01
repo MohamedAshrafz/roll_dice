@@ -6,3 +6,8 @@ const appColorGradientList = [
   Color.fromARGB(255, 109, 66, 219),
   Color.fromARGB(255, 84, 66, 219),
 ];
+const homeScreenColorGradientList = [
+  Color.fromARGB(255, 219, 34, 34),
+  Color.fromARGB(255, 219, 68, 34),
+  Color.fromARGB(255, 219, 105, 34),
+];
