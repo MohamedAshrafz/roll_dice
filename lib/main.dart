@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const HomeScreenWidget.defaultHomeScreenColoring(title: "Hello There"),
+      home: const HomeScreenWidget.defaultAppColoring(title: "Hello There"),
     );
   }
 }
