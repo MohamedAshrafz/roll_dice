@@ -12,7 +12,7 @@ class HomeScreenWidget extends StatefulWidget {
     required this.colorGradientList,
   });
 
-  // adding additional constructor to the widget
+  /// additional constructor to allow custom color gradient to this specific widget
   const HomeScreenWidget.defaultHomeScreenColoring({super.key, required this.title})
       : colorGradientList = homeScreenColorGradientList;
 
@@ -29,11 +29,16 @@ class HomeScreenWidget extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomeScreenWidget> {
+
   int _diceRolledNumber = 0;
+  /// To allow using the same Random object many times,
+  /// and not making a [new-one] every time we roll the dice.
+  final randomizer = Random();
 
   void _rollDice() {
     setState(() {
-      _diceRolledNumber = 1 + Random().nextInt(6);
+      // _diceRolledNumber = 1 + Random().nextInt(6);
+      _diceRolledNumber = 1 + randomizer.nextInt(6);
     });
   }
 
