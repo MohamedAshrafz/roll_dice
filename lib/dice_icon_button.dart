@@ -19,27 +19,27 @@ class DiceIconButton extends StatelessWidget {
     Widget childIcon;
 
     if (isDiceRolled) {
-      childIcon = Image.asset(
-        "assets/images/dice-$rolledNumber.png",
+      childIcon = SizedBox(
+        width: diceIconSize,
+        height: diceIconSize,
+        child: Image.asset(
+          "assets/images/dice-$rolledNumber.png",
+        ),
       );
     } else {
       childIcon = ElevatedButton(
         onPressed: rollDiceFunction,
         child: const Text(
           "Roll Dice",
-          style: TextStyle(fontSize: 25.0),
+          style: TextStyle(fontSize: 23.0, fontWeight: FontWeight.bold),
         ),
       );
     }
 
     return IconButton(
-      tooltip: isDiceRolled? "Dice rolled in this try":"Roll dice",
+      tooltip: isDiceRolled ? "Dice rolled in this try" : "Roll dice",
       onPressed: rollDiceFunction,
-      icon: SizedBox(
-        width: diceIconSize,
-        height: diceIconSize,
-        child: childIcon,
-      ),
+      icon: childIcon,
     );
   }
 }
