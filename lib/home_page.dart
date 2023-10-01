@@ -48,14 +48,11 @@ class _HomePageState extends State<HomeScreenWidget> {
 
   @override
   Widget build(BuildContext context) {
-    String additionalText;
-    bool diceIsAlreadyRolled;
+    bool isDiceRolled;
     if (_diceRolledNumber > 0 && _diceRolledNumber < 7) {
-      additionalText = "The dice you rolled";
-      diceIsAlreadyRolled = true;
+      isDiceRolled = true;
     } else {
-      additionalText = "Please roll the dice";
-      diceIsAlreadyRolled = false;
+      isDiceRolled = false;
     }
 
     BoxDecoration localWidgetBoxDecoration = widget.colorGradientList != null
@@ -86,19 +83,19 @@ class _HomePageState extends State<HomeScreenWidget> {
               ),
             ),
             Text(
-              additionalText,
+              isDiceRolled ? "The dice you rolled" : "Please roll the dice",
               textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 25.0, color: Colors.white),
             ),
             DiceIconButton(
               rollDiceFunction: _rollDice,
               rolledNumber: _diceRolledNumber,
-              isDiceRolled: diceIsAlreadyRolled,
+              isDiceRolled: isDiceRolled,
             ),
           ],
         ),
       ),
-      floatingActionButton: diceIsAlreadyRolled
+      floatingActionButton: isDiceRolled
           ? FloatingActionButton(
               tooltip: "Reset the app",
               onPressed: _resetApp,
