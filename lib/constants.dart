@@ -12,3 +12,11 @@ const homeScreenColorGradientList = [
   Color.fromARGB(255, 219, 68, 34),
   Color.fromARGB(255, 219, 105, 34),
 ];
+
+const appBoxDecoration = BoxDecoration(
+  gradient: LinearGradient(
+    colors: appColorGradientList,
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  ),
+);

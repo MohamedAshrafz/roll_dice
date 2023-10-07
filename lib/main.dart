@@ -1,15 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:roll_dice/home_page.dart';
-import 'constants.dart';
-
-const appBoxDecoration = BoxDecoration(
-  gradient: LinearGradient(
-    colors: appColorGradientList,
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-  ),
-);
 
 void main() => runApp(const MyApp());
 
